@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         // A:
-        /*
+
         List<Integer> numbers = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
@@ -30,9 +30,9 @@ public class Main {
 
         t1.start();
         t2.start();
-*/
+
          //B
-        /*
+
         List<Integer> numbersb = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
@@ -60,7 +60,7 @@ public class Main {
         t1b.start();
         t2b.start();
 
-         */
+
         /*
         Thread 1: 0
         Thread 1: 2
@@ -73,8 +73,9 @@ public class Main {
         Thread 1: 9
         Thread 2: 8
         */
+
+
         //C
-        /*
         List<Integer> numbersc = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
@@ -90,7 +91,7 @@ public class Main {
                 numbersc.remove(number);
             }
         }
-        */
+
         /*
         ConcurrentModificationException
          */
@@ -101,19 +102,19 @@ public class Main {
 
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
 
-        Iterator<Integer> iterator = list.iterator();
+        Iterator<Integer> iteratord = list.iterator();
 
-        while (iterator.hasNext()) {
-            Integer value = iterator.next();
+        while (iteratord.hasNext()) {
+            Integer value = iteratord.next();
             System.out.println("Value: " + value);
             if (value == 5) {
-                iterator.remove();
+                iteratord.remove();
             }
         }
 
         System.out.println("List after removing number: " + list);
 
-        iterator = list.iterator();
-        iterator.forEachRemaining(value -> System.out.println("forEachRemaining: " + value));
+        iteratord = list.iterator();
+        iteratord.forEachRemaining(value -> System.out.println("forEachRemaining: " + value));
     }
     }
